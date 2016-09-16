@@ -1,0 +1,86 @@
+1. Fausto Tommasi, Chris Lucas
+
+2.
+int race = 0;
+void* subtractor(void * args){
+  
+  int i =0;
+  for(i;i<LOOPSIZE;i++){
+    race -= INCSIZE;
+  }
+  return NULL;
+
+}
+void* adder(void* args){
+  int i =0;
+  for(i;i<LOOPSIZE;i++){
+    race += INCSIZE;
+  }
+  return NULL;
+}
+
+3. The expected behavior is that these functions will add or subtract from race based on the current result from the previous operation
+
+4. The final value of race would be the one that completed last as it would overwrite the value.
+
+
+
+5.
+race is 0
+race is 0
+race is 0
+race is 0
+race is 1379
+race is 0
+race is 0
+race is 0
+race is 0
+race is 1082
+race is 0
+race is 0
+race is 0
+race is 0
+race is 344
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 5360
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is -292
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+race is 0
+
+6. The program behavior seems to vary because of the order of thread execution. The threads seem to execute their instructions randomly. The possible min is -2000000 and max is 2000000 as either operation can always win the race
+
+7. For 1000000 500000 the results were always incorrect. For smaller values like 1000 the values were correct more often. This may be because of the scheduler performing a context switch every 1 ms. If a thread completes its life cycle faster than that then there will be no issues of concurrency
+
+8. Yes, a process can switch contexts before a threads life cycle ends
+
+9. The expected values are printed
