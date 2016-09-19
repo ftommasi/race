@@ -84,3 +84,8 @@ race is 0
 8. Yes, a process can switch contexts before a threads life cycle ends
 
 9. The expected values are printed
+
+10. The expected values are printed but the program hangs for a bit before returning to the shell.
+
+11. This is because when running on one processor all the tasks need to be finished before returning to the shell
+

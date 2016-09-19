@@ -3,7 +3,7 @@
 #include <pthread.h>
 
 #define INCSIZE 1
-#define LOOPSIZE 2000000
+#define LOOPSIZE 200000000
 int race = 0;
 void* subtractor(void * args){
   
